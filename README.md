@@ -54,6 +54,10 @@ If you're using uevr-stick-fix, put `stick_fix.dll` in that folder's `plugins` f
 
 Then inject as usual.
 
+### When to inject
+
+There's no on-screen keyboard in VR, and the game needs typing when you start a new save (naming your character and the save). Start a new game on the monitor first, then inject once you're in your store. With an existing save you can inject at any point.
+
 ## Optional: uevr-stick-fix
 
 In UEVR's OpenXR mode, a thumbstick can stop working while the *other* controller is idle. In Better Mart this shows at the till: you sit with your left hand still, the left controller goes to sleep, and turning with the right stick stops until you move the left controller again.
@@ -61,6 +65,14 @@ In UEVR's OpenXR mode, a thumbstick can stop working while the *other* controlle
 [uevr-stick-fix](https://github.com/decibuild/uevr-stick-fix) is a small UEVR plugin that works around this. It's a separate download: put `stick_fix.dll` into `%APPDATA%\UnrealVRMod\BetterMart-Win64-Shipping\plugins\`. Without it, everything else here works, and moving the left controller brings turning back.
 
 ## Settings
+
+### In the game's menu
+
+| Setting | Use | Why |
+| --- | --- | --- |
+| Anti-aliasing | TSR | The profile renders below full resolution, and TSR is the game's only upscaler. TAA gives a blurrier image. |
+| V-Sync | Off | The headset sets the frame timing. V-Sync syncs to your monitor instead, which adds lag and can cap the frame rate. |
+| Frame rate limit | Unlimited | A cap below your headset's refresh rate causes judder. |
 
 ### Performance (`user_script.txt`)
 
@@ -74,8 +86,6 @@ Many of these can't be set in the game's own graphics menu, and some of the menu
 | `sg.GlobalIlluminationQuality 2` | Lumen GI at High instead of Epic. Set it to `1` to turn Lumen GI off for more performance. |
 | `r.MotionBlurQuality 0`, `r.DepthOfFieldQuality 0`, `r.SceneColorFringeQuality 0`, `r.FilmGrain 0`, `r.LensFlareQuality 0`, `r.VolumetricFog 0`, `r.Tonemapper.Quality 1` | Turns off motion blur, depth of field, chromatic aberration, film grain, lens flares, volumetric fog and the vignette. |
 | `r.MaxAnisotropy 16` | Sharper textures at an angle. |
-
-Set anti-aliasing to TSR in the game's own settings. The game has no DLSS, FSR or XeSS, so TSR is its upscaler.
 
 ### Tuning the scripts
 
