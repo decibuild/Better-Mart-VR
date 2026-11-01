@@ -1,0 +1,6 @@
+dist/
+log.txt
+imgui.ini
+cache/
+plugins/
+*.bak
